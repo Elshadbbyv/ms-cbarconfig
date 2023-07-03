@@ -1,0 +1,8 @@
+server:
+  port: 8000
+openapi:
+  url: https://www.cbar.az/currencies/25.06.2023.xml
+client:
+  ms-currency-converter:
+    endpoint: http://localhost:8080
+

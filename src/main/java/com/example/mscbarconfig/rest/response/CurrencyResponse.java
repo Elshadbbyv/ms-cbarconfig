@@ -4,18 +4,19 @@ package com.example.mscbarconfig.rest.response;
 import com.example.mscbarconfig.model.Currency;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class CurrencyResponse {
     @JsonProperty("Currency")
     private String currency;
     @JsonProperty("Amount")
-    private Double amount;
+    private BigDecimal amount;
 
     public CurrencyResponse() {
     }
 
-    public CurrencyResponse(String  currency, Double amount) {
+    public CurrencyResponse(String  currency, BigDecimal amount) {
         this.currency = currency;
         this.amount = amount;
     }
@@ -31,11 +32,11 @@ public class CurrencyResponse {
         this.currency = currency;
     }
 
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

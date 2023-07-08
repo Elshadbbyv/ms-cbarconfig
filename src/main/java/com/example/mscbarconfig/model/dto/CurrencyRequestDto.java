@@ -1,12 +1,11 @@
-package com.example.mscbarconfig.rest.request;
+package com.example.mscbarconfig.model.dto;
 
-import com.example.mscbarconfig.model.Currency;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
+import java.util.Currency;
 
-
-public class CurrencyRequest {
+public class CurrencyRequestDto {
     @JsonProperty("Currency")
     private Currency currency;
     @JsonProperty("Amount")
@@ -14,10 +13,10 @@ public class CurrencyRequest {
     @JsonProperty("ConvertTo")
     private Currency convertTo;
 
-    public CurrencyRequest() {
+    public CurrencyRequestDto() {
     }
 
-    public CurrencyRequest(Currency currency, BigDecimal amount, Currency convertTo) {
+    public CurrencyRequestDto(Currency currency, BigDecimal amount, Currency convertTo) {
         this.currency = currency;
         this.amount = amount;
         this.convertTo = convertTo;
@@ -46,12 +45,5 @@ public class CurrencyRequest {
     public void setConvertTo(Currency convertTo) {
         this.convertTo = convertTo;
     }
-    @Override
-    public String toString() {
-        return "CurrencyRequest{" +
-                "currency=" + currency +
-                ", amount=" + amount +
-                ", convertTo=" + convertTo +
-                '}';
-    }
+
 }

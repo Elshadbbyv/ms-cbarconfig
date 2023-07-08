@@ -2,6 +2,8 @@ package com.example.mscbarconfig.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
+
 import java.util.Objects;
 
 public class CurrencyRate {
@@ -12,12 +14,12 @@ public class CurrencyRate {
     @JsonProperty("Name")
     private String name;
     @JsonProperty("Value")
-    private Double value;
+    private BigDecimal value;
 
     public CurrencyRate() {
     }
 
-    public CurrencyRate(String code, String nominal, String name, Double value) {
+    public CurrencyRate(String code, String nominal, String name, BigDecimal value) {
         this.code = code;
         this.nominal = nominal;
         this.name = name;
@@ -48,11 +50,11 @@ public class CurrencyRate {
         this.name = name;
     }
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 

@@ -1,26 +1,31 @@
-package com.example.mscbarconfig.rest.response;
+package com.example.mscbarconfig.model.dto;
 
 import com.example.mscbarconfig.model.Currency;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
-
 import java.util.Objects;
 
-public class ValuteResponse {
+public class CurrencyRateDto {
+    @JsonProperty("Code")
     private Currency code;
+    @JsonProperty("Nominal")
     private String nominal;
+    @JsonProperty("Name")
     private String name;
+    @JsonProperty("Value")
     private BigDecimal value;
 
-    public ValuteResponse() {
+    public CurrencyRateDto() {
     }
 
-    public ValuteResponse(Currency code, String nominal, String name, BigDecimal value) {
+    public CurrencyRateDto(Currency code, String nominal, String name, BigDecimal value) {
         this.code = code;
         this.nominal = nominal;
         this.name = name;
         this.value = value;
     }
+
 
 
     public Currency getCode() {
@@ -58,12 +63,12 @@ public class ValuteResponse {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ValuteResponse valuteResponse)) return false;
+        if (!(o instanceof CurrencyRateDto that)) return false;
 
-        if (!Objects.equals(code, valuteResponse.code)) return false;
-        if (!Objects.equals(nominal, valuteResponse.nominal)) return false;
-        if (!Objects.equals(name, valuteResponse.name)) return false;
-        return Objects.equals(value, valuteResponse.value);
+        if (code != that.code) return false;
+        if (!Objects.equals(nominal, that.nominal)) return false;
+        if (!Objects.equals(name, that.name)) return false;
+        return Objects.equals(value, that.value);
     }
 
     @Override
@@ -74,6 +79,4 @@ public class ValuteResponse {
         result = 31 * result + (value != null ? value.hashCode() : 0);
         return result;
     }
-
-
 }

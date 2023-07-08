@@ -4,24 +4,24 @@ import com.example.mscbarconfig.model.Currency;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ValuteRequest {
-    @JsonProperty("Code")
-    private Currency code;
+    @JsonProperty("Currency")
+    private Currency currency;
     @JsonProperty("ConvertTo")
     private Currency convertTo;
     public ValuteRequest() {
     }
 
-    public ValuteRequest(Currency code, Currency convertTo) {
-        this.code = code;
+    public ValuteRequest(Currency currency, Currency convertTo) {
+        this.currency = currency;
         this.convertTo = convertTo;
     }
 
-    public Currency getCode() {
-        return code;
+    public Currency getCurrency() {
+        return currency;
     }
 
-    public void setCode(Currency code) {
-        this.code = code;
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
     }
 
     public Currency getConvertTo() {
@@ -37,13 +37,13 @@ public class ValuteRequest {
         if (this == o) return true;
         if (!(o instanceof ValuteRequest that)) return false;
 
-        if (code != that.code) return false;
+        if (currency != that.currency) return false;
         return convertTo == that.convertTo;
     }
 
     @Override
     public int hashCode() {
-        int result = code != null ? code.hashCode() : 0;
+        int result = currency != null ? currency.hashCode() : 0;
         result = 31 * result + (convertTo != null ? convertTo.hashCode() : 0);
         return result;
     }
@@ -51,7 +51,7 @@ public class ValuteRequest {
     @Override
     public String toString() {
         return "ValuteRequest{" +
-                "code=" + code +
+                "code=" + currency +
                 ", convertTo=" + convertTo +
                 '}';
     }

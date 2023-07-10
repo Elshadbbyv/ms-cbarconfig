@@ -18,9 +18,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.13.1'
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '4.0.3'
-
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.json:json:20180813'
 }
 
 tasks.named('test') {
